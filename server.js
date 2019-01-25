@@ -7,7 +7,7 @@ const cors = require('cors')
 //origin: 'http://localhost:4200',
 //http://13.234.50.32:5514
 const corsOptions = {
-  origin: 'http://13.234.50.32:5514',
+  origin: 'http://13.234.50.32',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
