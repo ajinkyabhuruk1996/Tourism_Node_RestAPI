@@ -6,6 +6,7 @@ app.use(bodyParser.json())
 const cors = require('cors')
 //origin: 'http://localhost:4200',
 //http://13.234.50.32:5514
+//Changed cors
 const corsOptions = {
   origin: 'http://13.234.50.32',
   optionsSuccessStatus: 200
