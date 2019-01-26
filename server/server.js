@@ -6,9 +6,10 @@ app.use(bodyParser.json())
 const cors = require('cors')
 //origin: 'http://localhost:4200',
 //origin: 'http://13.234.50.32', this works without giving port
+//origin: 'http://13.234.50.32', this works and this origin is with forwarded ip address
 //Changed cors
 const corsOptions = {
-  origin: 'http://13.234.50.32',
+  origin: 'http://ajinkyabhuruk.com',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
