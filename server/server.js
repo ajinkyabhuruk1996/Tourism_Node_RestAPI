@@ -8,11 +8,28 @@ const cors = require('cors')
 //origin: 'http://13.234.50.32', this works without giving port
 //origin: 'http://13.234.50.32', this works and this origin is with forwarded ip address
 //Changed cors
-const corsOptions = {
-  origin: 'http://ajinkyabhuruk.com',
-  optionsSuccessStatus: 200
+
+// const whitelist = ['http://localhost:4200', 'http://127.0.0.1','http://13.234.50.32']
+
+// const corsOptions = {
+// origin: 'http://localhost:4200',
+//   optionsSuccessStatus: 200
+// }
+
+var whitelist = ['http://localhost:4200', 'http://ajinkyabhuruk.com','http://13.234.50.32']
+var corsOptions = {
+  optionsSuccessStatus: 200,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
 }
+
 app.use(cors(corsOptions))
+
 
 let customerRouter = require('./app/routes/customer.routes.js');
 app.use('/', customerRouter);
