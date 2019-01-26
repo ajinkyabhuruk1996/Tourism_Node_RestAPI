@@ -5,9 +5,13 @@
   "description": "Node.js RestAPI - GET/POST/PUT/DELETE",
   "main": "server.js",
   "scripts": {
+    "forever": "forever",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serverstart": "nodemon ./server/index.js",
-    "serverstart2": "nodemon --watch server ./server/server.js"
+    "serverstart2": "nodemon --watch server ./server/server.js",
+    "runforever": "forever -c nodemon ./server/server.js",
+    "runforever1": "forever -c nodemon --watch server ./server/server.js",
+    "runforever2": "forever start -c ./server/server.js"
   },
   "keywords": [
     "Node.js",
@@ -17,7 +21,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "forever": "^0.15.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
