@@ -16,7 +16,7 @@ const cors = require('cors')
 //   optionsSuccessStatus: 200
 // }
 
-var whitelist = ['http://localhost:4200', 'http://ajinkyabhuruk.com','http://13.234.50.32']
+var whitelist = ['http://localhost:4200', 'http://ajinkyabhuruk.com','http://13.234.50.32', 'http://www.ajinkyabhuruk.com']
 var corsOptions = {
   optionsSuccessStatus: 200,
   origin: function (origin, callback) {
